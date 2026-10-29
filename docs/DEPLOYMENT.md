@@ -3,7 +3,8 @@
 ## Scope
 
 This skeleton is deployable without Supabase or AI configuration. It is not a
-working interview product. No production deployment is required for team review.
+working interview product. No successful production application deployment is
+required for team review.
 
 Vercel **Preview** is the hosted environment for develop/feature branches.
 Vercel **Development** is primarily configuration for local development tooling;
@@ -13,15 +14,33 @@ it is not the branch preview URL teammates open.
 
 1. Import `devsandeepsawant-max/CrackIn` into the intended Vercel account/team.
    Grant the Vercel GitHub App access to this repository if necessary.
+   If the Vercel project already exists, use it instead of creating a duplicate.
 2. Select Vite, repository root, Node 24 LTS (or supported Node >=22.12),
    install `npm ci`, build `npm run build`, output `dist`.
+   New-project caveat: Vercel's first deployment is always Production, even from
+   another branch or with a preview target. Import the default main branch
+   first. Main currently has only a README, so this bootstrap build is expected
+   to fail because it has no application/package files. Keep that failed
+   deployment record; do not merge app code into main to fix it.
+   A failed first deployment still counts, so subsequent deployments can be
+   Preview. If every deployment is deleted, the first-deployment rule resets.
 3. Keep production branch `main`. Enable previews for develop and feature branches.
    Avoid changing production domains or promoting a preview for this task.
 4. Deploy `feature/sandeep-foundation-integration` as **Preview**, or trigger its
-   preview through the Git integration. Review branch+commit in deployment details.
+   preview through the Git integration. In the dashboard: Deployments → Create
+   Deployment → enter the full branch name → Create Deployment. Review the
+   branch, commit, and Preview environment in deployment details. For a new
+   project, complete the initial deployment attempt in step 2 first.
 5. Share the actual READY deployment URL in the PR and team channel. If protection
    is enabled, grant teammate access using the Vercel team's access controls;
    do not disable protection globally merely to bypass an access error.
+6. After Sandeep reviews and merges the foundation PR into develop, deploy
+   develop the same way. Share its branch-specific preview URL as the team's
+   ongoing integration environment; teammates then branch from updated develop.
+
+Official references:
+https://vercel.com/docs/deployments/environments#first-deployment
+https://vercel.com/docs/git#creating-a-deployment-from-a-git-reference
 
 `vercel.json` supplies Vite build/output settings and SPA deep-link fallback.
 It does not import the GitHub repository, create branches, or enforce access.
