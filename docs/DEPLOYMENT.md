@@ -55,6 +55,15 @@ secrets (or a deliberately server-only runtime). Never print their values.
 
 ## Preview verification
 
+- A `Ready` badge alone does not mean the application is deployed. The
+  initialization-only `main` branch can have a Ready production deployment
+  even though it serves no app. Confirm **Environment = Preview** and
+  **Source branch = `feature/sandeep-foundation-integration`** (or `develop`
+  after the PR is merged) before sharing a team link.
+- If the project's `Ready / Latest` card shows **Production**, branch `main`,
+  and commit `docs: initialize CrackIn repository`, that is the README-only
+  bootstrap—not the interview workspace. In Deployments, use **Create
+  Deployment** with the full feature-branch name. Keep `main` unchanged.
 - Deployment reports READY, correct Git branch, and correct commit.
 - Open `/`, `/start`, `/preview/analysis`, `/preview/practice`,
   `/preview/feedback`, `/history`, and `/team`.
