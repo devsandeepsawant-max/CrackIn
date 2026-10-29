@@ -21,6 +21,10 @@ npm run dev
 No environment variables are required for the skeleton. Copy `.env.example` to
 `.env.local` only when configuring Supabase. Never commit environment values.
 
+The lockfile pins package versions and integrity hashes. `.npmrc` omits
+environment-specific registry URLs so installs use the current environment's
+configured registry (Replit's package firewall locally; npm on GitHub/Vercel).
+
 ```sh
 npm run typecheck
 npm test
