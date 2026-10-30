@@ -1,0 +1,35 @@
+.candidate-flow fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.candidate-flow input:not([type="file"]) { width: 100%; border: 1px solid #d5d7e2; background: #f9f9fc; border-radius: 7px; padding: 13px 14px; font: inherit; font-size: 13px; }
+.candidate-flow input[type="file"] { display: block; max-width: 100%; margin: 18px 0; font-size: 12px; }
+.candidate-flow textarea { min-height: 220px; font-size: 13px; }
+.candidate-flow [aria-invalid="true"] { border-color: #a53c46 !important; }
+.candidate-flow .field-error { color: #9b303e; margin-top: 8px; font-size: 12px; }
+.candidate-flow .field-help { color: #747a8d; margin-top: 8px; font-size: 11px; }
+.candidate-flow .upload-zone { border: 1px dashed #bcb0d9; background: #faf9fd; border-radius: 10px; padding: 24px; margin-top: 24px; }
+.candidate-flow .upload-zone label { margin: 0; }
+.candidate-flow .selected-file { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+.candidate-flow .selected-file strong { overflow-wrap: anywhere; font-size: 13px; }
+.candidate-flow .selected-file span { display: block; color: #747a8d; font-size: 11px; }
+.candidate-flow .validation-summary, .candidate-flow .submission-error, .candidate-analysis .analysis-error { border: 1px solid #e5b6bd; border-radius: 9px; padding: 18px; background: #fff4f5; color: #852d39; margin-bottom: 22px; }
+.candidate-flow .validation-summary h2, .candidate-flow .submission-error h2 { font-size: 16px; margin-bottom: 10px; }
+.candidate-flow .validation-summary ul { padding-left: 20px; margin: 0; font-size: 13px; }
+.candidate-flow .validation-summary a { text-decoration: underline; }
+.candidate-flow .submission-error p { font-size: 13px; margin-top: 8px; }
+.candidate-flow .flow-status { margin-top: 24px; padding: 18px; border: 1px solid #e0daef; border-radius: 9px; background: #f4f1fb; font-size: 13px; }
+.candidate-flow progress { display: block; width: 100%; height: 12px; margin-top: 12px; accent-color: #6654a9; }
+.candidate-flow .privacy-note { font-size: 11px; margin-top: 16px; color: #747a8d; }
+.candidate-analysis .analysis-context { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 22px; font-size: 12px; color: #60677d; overflow-wrap: anywhere; }
+.candidate-analysis .match-score { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-bottom: 22px; }
+.candidate-analysis .score-value { color: #6654a9; font-size: 44px; font-weight: 700; line-height: 1; }
+.candidate-analysis .match-score meter { display: block; width: min(260px, 100%); height: 18px; margin-top: 10px; }
+.candidate-analysis .result-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.candidate-analysis .result-list { padding-left: 19px; margin: 14px 0 0; font-size: 13px; }
+.candidate-analysis .result-list li + li { margin-top: 14px; }
+.candidate-analysis .result-list p { margin-top: 5px; color: #61697f; overflow-wrap: anywhere; }
+.candidate-analysis .result-list strong { overflow-wrap: anywhere; }
+.candidate-analysis .loading-state { min-height: 180px; }
+.candidate-flow button:disabled { cursor: not-allowed; opacity: .65; }
+@media (max-width: 760px) {
+  .candidate-analysis .result-grid { grid-template-columns: 1fr; }
+  .candidate-flow .upload-zone { padding: 18px; }
+}
