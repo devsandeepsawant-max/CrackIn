@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { EmptyState, PageHeading } from '../components/common/UI'
+import { CandidateAnalysis } from '../components/analysis/CandidateAnalysis'
 
 export type Stage = 'analysis' | 'practice' | 'feedback'
 const stages = {
@@ -11,6 +12,7 @@ const stages = {
 export default function StagePage({ stage }: { stage: Stage }) {
   const content = stages[stage]
   const { sessionId } = useParams()
+  if (stage === 'analysis') return <CandidateAnalysis sessionId={sessionId} />
   return <>
     <PageHeading eyebrow={`STEP ${content.step} · ${stage.toUpperCase()}`} title={content.title} description={content.description} />
     <div className="notice" role="note">{sessionId ? 'Session route scaffold only. This ID has not been loaded or verified.' : 'Screen preview only. No real candidate session is active.'}</div>
